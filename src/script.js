@@ -8,9 +8,7 @@ const info = document.getElementById("info")
 async function getSynonyms() {
   try {
     const endpoint = url + input.value
-    const response = await fetch(endpoint, {
-      cache: 'no-cache'
-    })
+    const response = await fetch(endpoint)
     if (response.status === 200) {
       const JSONSynonyms = await response.json()
       info.innerHTML = `Synonyms to ${input.value}:`
